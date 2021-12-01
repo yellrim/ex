@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>World Wide Web</title>
+    <link rel="stylesheet" href="./css/css2.css">
+</head>
+<body>
+    <header>
+        <h1>WEB</h1>
+
+
+        <button class="bu1">DarkMode</button>
+
+        <!-- <button class="bu2" onclick="lightMode();">lightMode</button> -->
+    </header>    
+
+    <nav>
+      <ol>
+          <li><a href="./html02.html">HTML</a></li>
+          <li><a href="./css02.html">CSS</a></li>
+          <li><a href="./js02.html">JavaScript</a></li>
+      </ol>
+      <div>
+          <h2>HTML</h2>
+          <img src="./img/htmlimg.jpg" alt="html 이미지"></img>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perspiciatis culpa nobis maxime. Maxime incidunt accusamus sit ratione ad? Neque, eveniet. Libero exercitationem sed natus voluptates at cupiditate suscipit qui.
+              <br>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati harum laboriosam quidem odio non quam hic a accusamus assumenda nisi, voluptatum fugiat suscipit dignissimos tempora alias nobis? Praesentium, eligendi quidem?
+              <br>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sint maiores accusantium et, nisi eos voluptatibus necessitatibus libero tempore, illo possimus id eius cupiditate sunt enim exercitationem? Beatae, vitae assumenda.
+          </p>
+      </div>
+    </nav>
+    <script src="./jquery-3.6.0.js"></script>
+
+    <script>
+        $('button').click('function(){
+            $('body').css({'background-color':'black'});
+            $('h1').css({'border-bottom' : '5px solid white'});
+            $('ol,h2,p').css({'color':'white'});
+            $('a').css({'color':'lightblue'});
+        });
+    </script>
+</body>
+</html>

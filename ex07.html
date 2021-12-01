@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 300px;
+            transition: 0.5s;
+        }
+        /* 모바일용 Style */
+        div#box01 {
+            background-color: blueviolet;
+        }
+
+        div#box02 {
+            background-color: rgb(180, 103, 252);
+        }
+
+        div#box03 {
+            background-color: rgb(211, 180, 240);
+        }
+
+        /* 테블릿용 Style */
+        @media (min-width:768px){
+            div{
+                float: left;
+            }
+        }
+
+        /* 데스크탑용 Style */
+        @media (min-width:1200px){
+            div {
+                width: 360px;
+                height: 360px;
+            }
+
+            div#box01{
+                background-color: rgb(89, 7, 165);
+            }
+
+            div#box02{
+                opacity: unset;
+            }
+
+            div#box03{
+                border-radius: 50%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box01">BOX01</div>
+    <div id="box02">BOX02</div>
+    <div id="box03">BOX03</div>
+</body>
+</html>
