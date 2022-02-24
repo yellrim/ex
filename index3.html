@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/default.css">
+</head>
+<style>
+:root{
+    font-weight: 400;
+    font-size: 14px;
+    color:#000;
+    line-height:1.5;
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    position: relative;
+    z-index: 99;
+}
+.header .inner{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.logo{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.nav{
+    align-items: flex-end;
+}
+.main-menu{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.main-menu h2{
+    display: none;
+}
+.main-menu li{
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.main-menu li:hover{
+    background-color: #000;
+    color: #fff;
+}
+.sub-menu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sub-menu ul{
+    display: flex;
+}
+.sub-menu ul h2{
+    display: none;
+}
+.sub-menu ul li{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.sub-menu ul li a{
+    padding: 0.5rem 2rem;
+}
+.sub-menu ul li a:hover{
+    background-color: #fff;
+    color: #000;
+}
+.slider{
+    position: relative;
+    z-index: 98;
+}
+.slider .inner{
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+/* fade */
+.slider .img-box{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 1s;
+    z-index: 10;
+}
+.slider .img-box:first-child{
+    opacity: 1;
+}
+.pager{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    z-index: 20;
+    transform: translateX(-50%);
+}
+.pager span{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    background-color: #999;
+    text-indent: -999999px;
+}
+.pager span:hover{
+    background-color: #000;
+}
+.main h2{
+    display: none;
+}
+.main .inner{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.notice-tit,.notice-txt{
+    display: grid;
+    grid-template-columns: 7fr 3fr 2fr;
+    margin: 0.5rem 0;
+}
+.notice-tit>div{
+    font-weight: 600;
+    text-align: center;
+}
+.notice-txt>div{
+    text-align: center;
+}
+.notice-txt>.title{
+    text-align: left;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.gallery-list{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.gallery-list li{
+    width: 32%;
+}
+.gallery-list
+.footer{
+    border-top: 2px solid #000;
+}
+.footer .inner{
+    height: 100px;
+    display: grid;
+    grid-template-columns:2fr 7fr 3fr;
+    align-items: center;
+}
+.footer h2{
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+address{
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+.modal2{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <div class="inner clearfix">
+                    <h1 class="logo f-left"><a href="#">로고</a></h1>
+                    <nav class="nav f-right">
+                        <h2>메인메뉴</h2>
+                        <ul class="main-menu">
+                            <li class="menu" id="menu01"><a href="#">MEUN-1</a></li>
+                            <li class="menu" id="menu02"><a href="#">MEUN-2</a></li>
+                            <li class="menu" id="menu03"><a href="#">MEUN-3</a></li>
+                            <li class="menu" id="menu04"><a href="#">MEUN-4</a></li>
+                        </ul>
+                        <div class="sub clearfix">
+                            <h2>서브메뉴</h2>
+                            <ul class="sub-menu clearfix f-right">
+                                <li class="f-left">
+                                    <a href="#">SubMenu-1</a>
+                                    <a href="#">SubMenu-2</a>
+                                    <a href="#">SubMenu-3</a>
+                                    <a href="#">SubMenu-4</a>
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">SubMenu-1</a>
+                                    <a href="#">SubMenu-2</a>
+                                    <a href="#">SubMenu-3</a>
+                                    <a href="#">SubMenu-4</a>
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">SubMenu-1</a>
+                                    <a href="#">SubMenu-2</a>
+                                    <a href="#">SubMenu-3</a>
+                                    <a href="#">SubMenu-4</a>
+                                </li>
+                                <li class="f-left">
+                                    <a href="#">SubMenu-1</a>
+                                    <a href="#">SubMenu-2</a>
+                                    <a href="#">SubMenu-3</a>
+                                    <a href="#">SubMenu-4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="sec slider">
+            <div class="container">
+                <h2>슬라이더</h2>
+                <div class="inner slider">
+                    <div class="img-box"><a href="#"><img src="./images/slider01.jpg" alt="슬라이드1"></a></div>
+                    <div class="img-box"><a href="#"><img src="./images/slider02.jpg" alt="슬라이드2"></a></div>
+                    <div class="img-box"><a href="#"><img src="./images/slider03.jpg" alt="슬라이드3"></a></div>
+                    <div class="pager">
+                        <span index-num="0" id="btn-slide01">1</span>
+                        <span index-num="1" id="btn-slide02">2</span>
+                        <span index-num="2" id="btn-slide03">3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec main">
+            <div class="container">
+                <h2>메인</h2>
+                <div class="inner clearfix">
+                    <article class="notice f-left w-30">
+                        <h3>공지사항</h3>
+                        <div class="notice-tit clearfix">
+                            <div class="title f-left">제목</div>
+                            <div class="date f-left">날짜</div>
+                            <div class="writer f-left">작성자</div>
+                        </div>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">[긴급] 코로나19로 인한 영엽시간 조정 안내</div>
+                            <div class="date f-left">2022-02-23</div>
+                            <div class="writer f-left">주인장</div>
+                        </div>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">새봄 맞이 3월 이벤트 안내</div>
+                            <div class="date f-left">2022-02-23</div>
+                            <div class="writer f-left">주인장</div>
+                        </div>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">월간 회원을 위한 특별한 혜택</div>
+                            <div class="date f-left">2022-02-19</div>
+                            <div class="writer f-left">주인장</div>
+                        </div>
+                        <div class="notice-txt clearfix">
+                            <div class="title f-left">SNS에 홍보하고 사은품 받자</div>
+                            <div class="date f-left">2022-01-22</div>s
+                            <div class="writer f-left">주인장</div>
+                        </div>
+                    </article>
+                    <article class="gallery f-left w-30">
+                        <h3>갤러리</h3>
+                        <ul class="gallery-list clearfix">
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img1.jpg" alt="이미지1"></a></div>
+                                </li>
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img2.jpg" alt="이미지2"></a></div>
+                                </li>
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img3.jpg" alt="이미지3"></a></div>
+                                </li>
+                        </ul>
+                    </article>
+                    <article class="banner f-left w-30 .m-r-0">
+                        <h3>배너</h3>
+                        <img src="./images/img1.jpg" alt=""><a href=""></a></img>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="inner clearfix">
+                    <h2 class="f-left"><a href="#">로고</a></h2>
+                    <address class="f-left">
+                        Copyright KYR
+                    </address>
+                    <select class="f-left">
+                        <option disabled>패밀리 사이트</option>
+                        <option value="01">오냥 사이트</option>
+                        <option value="02">예냥 사이트</option>
+                        <option value="03">냥냥 사이트</option>
+                        <option value="01">고냥 사이트</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="modal">
+        <div class="container">
+            <div class="inner">
+                <div class="modal-tit">
+                    모달타이틀
+                </div>
+                <div class="modal-txt">
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam nisi qui ipsum molestias dignissimos doloribus nihil quidem voluptates quos, autem aspernatur obcaecati perspiciatis at inventore similique maiores distinctio consectetur dolorem.
+                </div>
+                <div class="clerfix">
+                    <button class="btn-modal-close f-right" type="button">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal2">
+
+    </div>
+    <script src="./js/myscript.js"></script>
+    <script>
+    </script>
+</body>
+</html>

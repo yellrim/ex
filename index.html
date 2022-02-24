@@ -4,294 +4,357 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./img/pv.png" type="image/x-icon">
-    <script>
-        window.onload=function(){
-            let btnNav = document.getElementById('btn-nav');
-            btnNav.addEventListener('click',function(){
-            let _header =document.querySelector('.header');
-            let _nav = document.querySelector('.nav');
-            _header.classList.toggle('show-nav');
-            _nav.classList.toggle('show-nav');
-        });
-        }
-    </script>
-    <style>
-         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-         :root{
-            font-family: 'Roboto', sans-serif;
-            font-family: 'Noto Sans KR', sans-serif;
-         }
-         *{box-sizing:border-box;margin:0;padding:0;}
-        img{width:100%;vertical-align:top;}
-        .clearfix::after{
-            content:'';
-            display:block;
-            clear:both;
-        }
-        .wrap{
-            width: 360px;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-
-        /* header */
-        .header .container{
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-
-            height: 49px;
-            border-bottom: 1px solid #eeeeee;
-            color: #666666;
-        }
-        .left span{
-            font-size: 18px;
-            line-height: 18px;
-            margin: 17px 6px 17px 17px;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        h1{
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 49px;
-            cursor: pointer;
-        }
-
-        .right span{
-            font-size: 18px;
-            line-height: 18px;
-            margin: 17px 17px 17px 6px;
-            display: inline-block;
-            cursor: pointer;
-        }
-        /* sec01 */
-
-        .sec01 .main-img{
-            position:relative;
-            width:140px;
-            height:140px;
-            margin:0 auto;
-            background-color: #666666;
-            background-position:center center;
-
-            border:4px solid #666666;
-            border-radius: 50%;
-            margin: auto;
-            margin-top:40px;
-            margin-bottom: 15px;
-
-            position: relative;
-            
-            z-index: 1;
-        }
-        .sec01 .box01{
-            position:absolute;
-            left:0;
-            right: 0;
-            top:0;
-            bottom: 0;
-
-            /* width: 136px;
-            height: 136px;
-            background-image: url(./img/1.jpg);
-            background-repeat: no-repeat;
-            background-position:center center;
-            background-size: cover;
-            border-radius: 50%;
-
-            margin: auto;
-            margin-top:40px;
-            margin-bottom: 15px;
-            position: absolute;
-            top: -50px;
-            z-index: 3; */
-        }
-
-        .sec01 .box02{
-            left:4px;
-            right:4px;
-            top:4px;
-            bottom:4px;
-            overflow:hidden;
-            /* width: 140px;
-            height: 140px;
-            background-color: #8df7c1;
-            background-repeat: no-repeat;
-            background-position:center center;
-            background-size: cover;
-            border-radius: 50%;
-
-            margin: auto;
-            margin-top:40px;
-            margin-bottom: 15px;
-            position: absolute;
-            top: -50px;
-            right: -10px;
-            z-index: 2; */
-        }
-        
-        /* .sec01 img{
-            width: 140px;
-            height: 140px;
-            display:block;
-            margin: auto;
-            margin-top:40px;
-            margin-bottom: 15px;
-        } */
-
-        .sec01 h2,h3,h4{
-            text-align: center;
-        }
-        .sec01 h4{
-            font-size: 18px;
-            color: #cccccc;
-        }
-        .sec01 h2{
-            font-size: 24px;
-            color: #666666;
-        }
-        .sec01 h3{
-            font-size: 18px;
-            color: #888888;
-        }
-
-        /* sec02 */
-        .sec02{
-            color: #666666;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-evenly;
-            text-align: center;
-            margin: 30px;
-        }
-        .sec02 span{
-            font-size: 14px;
-            color: black;
-        }
-        .sec02 p{
-            font-size: 10px;
-            color: #666666
-        }
-        .sec02 span:hover {
-            font-size: 15px;
-        }
-        /* article */
-        .art{
-            width:100%;
-            margin:0 auto;
-        }
-        .img-box{
-            width:88px;
-            margin-right:2px;
-            float:left;
-            overflow:hidden;
-            cursor: pointer;
-        }
-        .img-box img:hover{
-            transform:translateX(15px);
-        }
-        .pht01,.pht05{
-            margin-left: 0;
-        }
-        .pht04,.pht08{
-            margin-right:0;
-        }
-        .pht01,.pht02,.pht03,.pht04{
-            margin-bottom:2px;
-        }
-
-        /* footer */
-        .footer{
-            position: fixed;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            background-color: #f0f0f0;
-            width: 360px;
-            height: 44px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 44px;
-        }
-        .footer span{
-            display: inline-block;
-            margin-right:70px;
-            color: #cccccc;
-            cursor: pointer;
-        }
-        .footer span:first-child{
-            margin-left: 40px;
-        }
-        .footer span:last-child{
-            margin-right: 0;
-        }
-        .footer span:hover{
-            color: #666666;
-        }
-    </style>
+    <title>KYeRim</title>
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+:root{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color:#000;
+    line-height:1.5;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.sec .slider{
+    height: 350px;
+}
+.sec .notice-gall,.banner,.link{
+    height: 200px;
+}
+.wrap{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+    grid-auto-rows: 83.3333px;
+}
+.side{
+    grid-column: 1/3;
+    grid-row: 1/11;
+}
+/* .logo{
+    grid-column: 1/3;
+    overflow: hidden;
+} */
+/* .aside{
+    margin-left: 20px;
+    grid-row: 1/3;
+    grid-column: 1/3;
+} */
+.slider{
+    grid-row: 1/4;
+    grid-column: 3/13;
+}
+.main{
+    grid-row: 4/7;
+    grid-column: 3/13;
+}
+.footer{
+    grid-column: 3/13;
+    grid-row: 7/13;
+}
+/* 사이드메뉴 */
+.header .inner{
+    display: inline-block;
+    margin: 20px;
+    border: 2px solid #000;
+}
+.header .logo{
+    text-align: center;
+}
+.aside{
+    position: relative;
+    display: inline-block;
+}
+.main-menu{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-menu{
+    /* display: none; */
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+.sub-menu li a:hover{
+    background-color: #000;
+    color: #fff;
+}
+.aside:hover .sub-menu{
+    display: block;
+}
+
+/* 슬라이드 */
+.slider{
+    position: relative;
+    z-index: 98;
+    display: flex;
+    flex-flow: column wrap;
+}
+.slider .inner{
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+.slider h2{
+    text-indent: -99999px;
+}
+/* fade */
+.slider .img-box{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 1s;
+    z-index: 10;
+}
+.slider .img-box:first-child{
+    opacity: 1;
+}
+.pager{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    z-index: 20;
+    transform: translateX(-50%);
+}
+.pager span{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    background-color: #999;
+    text-indent: -999999px;
+}
+.pager span:hover{
+    background-color: #000;
+}
+/* 메인 */
+.main h2{
+    text-indent: -99999px;
+}
+.main .inner{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.notice-tit,.notice-txt{
+    display: grid;
+    grid-template-columns: 7fr 5fr 4fr;
+    margin: 0.5rem 0;
+}
+.notice-tit>div{
+    font-weight: 600;
+    text-align: center;
+}
+.notice-txt>div{
+    text-align: center;
+}
+.notice-txt>.title{
+    text-align: left;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.gallery-list{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.gallery-list li{
+    width: 32%;
+}
+/* 푸터 */
+.footer .contianer{
+    float: left;
+}
+.footer .footer-nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+/* 모달 */
+.modal{
+    display: none;
+}
+
+
+</style>
 <body>
     <div class="wrap">
-        <header class="header">
+        <!-- <header class="header">
             <div class="container">
-                <section class="left">
-                    <span class="btn-nav" id="btn-nav"><i class="fas fa-bars"></i></span>
-                    <span><i class="fas fa-search"></i></span>
-                </section>
-                <section class="center">
-                    <h1>Profile</h1>
-                </section>
-                <section class="right">
-                    <span><i class="fas fa-user-alt"></i></span>
-                    <span><i class="fas fa-comments"></i></span>
-                </section>
+                <div class="inner"> -->
+                <section class="side">
+                    <h1 class="logo"><a href="#index.html">KYeRim</a></h1>
+                    <aside class="aside">
+                        <ul class="main-menu">
+                          <li>MEUN-1</li>
+                        </ul>
+                          <ul class="sub-menu">
+                              <li><a href="#">SubMenu-1</a></li>
+                              <li><a href="#">SubMenu-2</a></li>
+                              <li><a href="#">SubMenu-3</a></li>
+                              <li><a href="#">SubMenu-4</a></li>
+                          </ul>
+                        <ul class="main-menu">
+                            <li>MEUN-2</li>
+                        </ul>
+                            <ul class="sub-menu">
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        <ul class="main-menu">
+                            <li>MEUN-3</li>
+                        </ul>    
+                            <ul class="sub-menu">
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                        <ul class="main-menu">
+                            <li>MEUN-4</li>
+                        </ul>
+                            <ul class="sub-menu">
+                                <li><a href="#">SubMenu-1</a></li>
+                                <li><a href="#">SubMenu-2</a></li>
+                                <li><a href="#">SubMenu-3</a></li>
+                                <li><a href="#">SubMenu-4</a></li>
+                            </ul>
+                    </aside> 
+                </section>                     
+                <!-- </div>
             </div>
-        </header>
-        <section class="sec sec01">
-            <div class="main-img">
-                <div class="box01"></div>
-                <div class="box02"></div>
+        </header> -->
+        <section class="sec slider">
+            <div class="container">
+                <h2>슬라이더</h2>
+                <div class="inner slider">
+                    <div class="img-box" id="slide01"><a href="#"><img src="./images/slider01.jpg" alt="슬라이드1"></a></div>
+                    <div class="img-box" id="slide02"><a href="#"><img src="./images/slider02.jpg" alt="슬라이드2"></a></div>
+                    <div class="img-box" id="slide03"><a href="#"><img src="./images/slider03.jpg" alt="슬라이드3"></a></div>
+                    <div class="pager">
+                        <span index-num="0" id="btn-slide01">1</span>
+                        <span index-num="1" id="btn-slide02">2</span>
+                        <span index-num="2" id="btn-slide03">3</span>
+                    </div>
+                </div>
             </div>
-            <!-- <img src="./img/main.jpg" alt="쌍둥이 이미지"> -->
-            <h4>Complate</h4>
-            <br>
-            <h2>Hong Gil-dong</h2>
-            <h3><i class="fas fa-map-marker-alt"></i>seoul, joongu</h3>
         </section>
-        <section class="sec sec02">
-            <div class="wer">
-                <span>1,120</span><p>팔로워</p>
-            </div>
-            <div class="wing">
-                <span>1,120</span><p>팔로워</p>
-            </div>
-            <div class="photo">
-            <span>678</span><p>사진첩</p>
+        <section class="sec main">
+            <h2>메인</h2>
+            <div class="contianer">
+                <div class="inner">
+                    <article class="notice-gall">
+                        <div class="notice">
+                            <h3>notice</h3>
+                            <div class="notice-tit">
+                                <div class="title">제목</div>
+                                <div class="date">날짜</div>
+                                <div class="writer">작성자</div>
+                            </div>
+                            <div class="notice-txt">
+                                <div class="title">[event]Lorem ipsum dolor sit amet.</div>
+                                <div class="date">2022-01-22</div>
+                                <div class="writer">oh nyang</div>
+                            </div>
+                            <div class="notice-txt">
+                                <div class="title">Lorem ipsum dolor sit amet consectetur.</div>
+                                <div class="date">2022-02-08</div>
+                                <div class="writer">ye nyang</div>
+                            </div>
+                            <div class="notice-txt">
+                                <div class="title">Lorem ipsum dolor sit amet.</div>
+                                <div class="date">2022-02-12</div>
+                                <div class="writer">oh nyang</div>
+                            </div>
+                            <div class="notice-txt">
+                                <div class="title">Lorem ipsum dolor sit amet consectetur.</div>
+                                <div class="date">2022-02-22</div>
+                                <div class="writer">ye nyang</div>
+                            </div>
+                        </div>
+                        <div class="gallery">
+                            <h3>gallery</h3>
+                            <ul class="gallery-list clearfix">
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img01.jpg" alt="이미지1"></a></div>
+                                </li>
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img02.jpg" alt="이미지2"></a></div>
+                                </li>
+                                <li class="f-left">
+                                    <div class="img-box"><a href="#"><img src="images/img03.jpg" alt="이미지3"></a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="banner">
+                        <h3>banner</h3>
+                        <img src="./images/banner.jpg" alt="배너 이미지"><a href="#"></a></img>
+                    </article>
+                    <article class="link">
+                        <div class="container">
+                        <a href="">oh nyang site</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
-        <article class="art clearfix">
-            <div class="img-box pht01"><img src="./img/1-2.jpg" alt="귀여운 아기 이미지1"></div>
-            <div class="img-box pht02"><img src="./img/2-2.jpg" alt="귀여운 아기 이미지2"></div>
-            <div class="img-box pht03"><img src="./img/3-3.jpg" alt="귀여운 아기 이미지3"></div>
-            <div class="img-box pht04"><img src="./img/4-4.jpg" alt="귀여운 아기 이미지4"></div>
-            <div class="img-box pht05"><img src="./img/5-5.jpg" alt="귀여운 아기 이미지5"></div>
-            <div class="img-box pht06"><img src="./img/6-6.jpg" alt="귀여운 아기 이미지6"></div>
-            <div class="img-box pht07"><img src="./img/7-7.jpg" alt="귀여운 아기 이미지7"></div>
-            <div class="img-box pht08"><img src="./img/8-8.jpg" alt="귀여운 아기 이미지8"></div>
-        </article>
         <footer class="footer">
-            <span><a href="./index.html"><i class="fas fa-home"></i></a></i></span>
-            <span><a href="#"><i class="fas fa-handshake"></i></a></span>
-            <span><a href="#"><i class="fas fa-paper-plane"></i></a></span>
-            <span><a href="#"><i class="fas fa-map-marked-alt"></i></a></span>
+            <div class="contianer clearfix">
+                <h2>KYeRim</h2>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="#">MENU-1</a></li>
+                            <li><a href="#">MENU-2</a></li>
+                            <li><a href="#">MENU-3</a></li>
+                            <li><a href="#">MENU-4</a></li>
+                        </ul>
+                    </nav>
+                <address>Copyright KYeRim</address>
+            </div>
         </footer>
     </div>
+
+    <div class="modal">
+        <div class="container">
+            <div class="inner">
+                <div class="modal-tit">
+                    모달타이틀
+                </div>
+                <div class="modal-txt">
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam nisi qui ipsum molestias dignissimos doloribus nihil quidem voluptates quos, autem aspernatur obcaecati perspiciatis at inventore similique maiores distinctio consectetur dolorem.
+                </div>
+                <div class="clerfix">
+                    <button class="btn-modal-close f-right" type="button">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    
+    </script>
 </body>
 </html>
